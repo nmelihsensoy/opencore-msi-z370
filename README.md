@@ -61,13 +61,13 @@ This repository contains OpenCore EFI for booting macOs Monterey with the follow
 
 ### Black Screen | There is no output with onboard HDMI/DVI | iGpu showing only 7MB VRAM.
 
-* Complete all steps with the `-igfxvesa` [boot flag ](https://dortania.github.io/GPU-Buyers-Guide/misc/bootflag.html#intel-boot-arguments) by editing 
+* Complete all steps with the `-igfxvesa` [boot flag ](https://dortania.github.io/GPU-Buyers-Guide/misc/bootflag.html#intel-boot-arguments) by editing:  
     - `config.plist`>`NVRAM`>`Add`>`7C436110-AB2A-4BBB-A880-FE41995C9F82`>`boot-args`
 
-* Install & Open [Hackintool](https://github.com/headkaze/Hackintool).
+* Install & Open [Hackintool](https://github.com/headkaze/Hackintool)
     - In `Connectors`->`Advanced` tab, check the `VRAM 2048MB`, `Enable HDMI20(4K)`, `Hotplug Reboot Fix` options.
     - Click `Generate Patch` button to generate XML tree.
 
-* Open your `config.plist` with **TEXT EDITOR** and replace the `PciRoot(0x0)/Pci(0x2,0x0)` node with the generated one. For more information see [here]([here](https://www.tonymacx86.com/threads/guide-general-framebuffer-patching-guide-hdmi-black-screen-problem.269149/))
+* Open your `config.plist` with **TEXT EDITOR** and replace the `PciRoot(0x0)/Pci(0x2,0x0)` node with the generated one. For more information see [here](https://www.tonymacx86.com/threads/guide-general-framebuffer-patching-guide-hdmi-black-screen-problem.269149/)
 
 * Remove the `-igfxvesa` flag.
